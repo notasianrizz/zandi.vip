@@ -1,0 +1,44 @@
+---
+const navItems = [
+  { label: 'Home', href: '/' },
+  { label: 'About Me', href: '/about' },
+  { label: 'My Story', href: '/my-story' },
+  { label: 'Photos', href: '/photos' },
+  { label: 'Blogs', href: '/blog' },
+  { label: 'Articles', href: 'https://erau.academia.edu/BryanZandi', external: true },
+  { label: 'Contact Me', href: '/contact' },
+];
+
+const currentPath = Astro.url.pathname;
+
+function isActive(href: string): boolean {
+  if (href === '/') return currentPath === '/';
+  return currentPath.startsWith(href);
+}
+---
+
+<nav class="sticky top-0 z-50 bg-[#0a0f1e]/90 backdrop-blur-md border-b border-[#1e3a5f]">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <a href="/" class="font-mono text-sm text-[#94a3b8] tracking-widest uppercase hover:text-[#38bdf8] transition-colors">
+      BZ · ATP
+    </a>
+    <ul class="flex flex-wrap gap-1 list-none m-0 p-0">
+      {navItems.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            target={item.external ? '_blank' : undefined}
+            rel={item.external ? 'noopener noreferrer' : undefined}
+            class={`px-3 py-1.5 rounded text-sm font-medium transition-all duration-200 no-underline
+              ${isActive(item.href)
+                ? 'bg-[#f59e0b] text-[#0a0f1e] font-semibold'
+                : 'text-[#94a3b8] hover:text-[#f1f5f9] hover:bg-[#1e3a5f]'
+              }`}
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>
