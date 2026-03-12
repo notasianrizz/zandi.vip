@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="My Story">
+  <!-- Page Hero -->
+  <section class="relative h-64 flex items-end">
+    <img
+      src="/images/hero/airplane-hero.jpg"
+      alt=""
+      aria-hidden="true"
+      class="absolute inset-0 w-full h-full object-cover object-bottom"
+    />
+    <div class="absolute inset-0 bg-[#0a0f1e]/75"></div>
+    <div class="relative z-10 max-w-6xl mx-auto px-6 pb-8 w-full">
+      <p class="font-mono text-[#38bdf8] text-xs tracking-widest uppercase mb-2">Portfolio</p>
+      <h1 class="text-4xl md:text-5xl font-bold text-white">My Story</h1>
+    </div>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-6 py-16">
+    <!-- Portrait -->
+    <div class="flex justify-center mb-14">
+      <img
+        src="/images/mystory/bryan-bw-portrait.jpg"
+        alt="Bryan Zandi in uniform"
+        class="w-72 rounded-lg border border-[#1e3a5f] grayscale shadow-xl"
+      />
+    </div>
+
+    <!-- Story Text -->
+    <div class="space-y-6 text-[#94a3b8] leading-relaxed text-base">
+      <p>
+        My name is Bryan Zandi. I was born in 1982 in Iran when the devastating war between Iran and Iraq,
+        which lasted eight years, had just begun. Ironically, growing up through the war and witnessing fighter
+        jets flying overhead every day prompted my interest in aviation, and I dreamed of becoming a pilot.
+        However, as a religious and political minority in my own country, I never had the opportunity to pursue
+        my dream due to the intricate socio-political environment of the state. Therefore, I decided to veer my
+        path and pursue a course entirely different field; hospitality. Even though I obtained a Bachelor's degree
+        in hotel and tourism management and worked as a professional in hospitality for the next decade, I never
+        stopped dreaming of becoming a pilot.
+      </p>
+      <p>
+        In 2012, I was granted a US visa and immigrated to the land of opportunity with my wife and 3-year-old
+        son. Initially, I intended to continue my education and get my Ph.D. in Hospitality Management. However,
+        after communicating with various colleges and universities, I realized the objective was somewhat
+        unachievable. Although most academic institutes validated my degree in hotel and tourism management
+        after evaluation, they equated it to an associate's degree in the US. They suggested I study for a couple
+        more years to obtain a grade equivalent to the US academic degree.
+      </p>
+      <p>
+        I then decided to pursue a degree and career in aviation instead of redoing hospitality management from
+        the beginning. On a late summer day in 2014, I walked into the office of the aviation department manager
+        of Green River College and discussed my objective of becoming a pilot. He took the time to explain all the
+        criteria to me and assisted me with enrolling in the Aviation program at Green River College. A few weeks
+        later, I commenced my education in aviation by attending the first class of the course, Aviation 101! The
+        college staff also helped me find a good flight school, and a few weeks later, I conducted my first-ever
+        flight lesson on a Cessna 172 out of Crest Airpark (S36) in Kent, WA. It was an unforgettable day!
+      </p>
+      <p>
+        I worked two jobs, one full-time and one part-time, to provide for my wife, son, and newborn baby and
+        cover the flight school costs. I attended college classes from 7 a.m. to 1 p.m., worked at a grocery store
+        from 1:30 to 3:30 p.m. as a freight crew member (stacking shelves), rested for six hours, and worked a
+        graveyard shift as a hotel security officer, which allowed me to do my school assignments during my
+        downtime. Four challenging but outstanding and unique years passed, and in June 2018, I graduated from
+        Green River College's Aviation program with a bachelor's degree in Aeronautical Science. I continued my
+        flight training at the Crest Airpark, and after successfully completing the Private Pilot training and adding
+        an Instrument rating, I passed my Commercial Pilot check ride on a breezy Fall day and officially became a
+        commercial pilot. However, with only 300 hours of flight time, I was far from getting an airline job. Thus, I
+        decided to become a Certified Flight Instructor (CFI) to build flight hours.
+      </p>
+      <p>
+        I graduated from the training and passed my ATP check ride with an Embraer 170-190 Type-Rating in
+        November 2023. As a Chicago O'Hare International Airport-based airline pilot who transports passengers
+        all over the Midwest and the East Coast, I can tell the years of hard work paid off, and I made my piloting
+        dream come true!
+      </p>
+      <p>
+        My next five-year goal is to gain more experience in the Part-121 world and then transition to a legacy air
+        career. Initially, I aimed for Delta Airlines since they are based at Sea-Tac International Airport in Seattle.
+        However, in January 2025, my family and I decided to change the scenery and move to Queen City,
+        Charlotte, North Carolina. Thus, I now plan to apply with American Airlines since Charlotte Douglas
+        International Airport is its second-largest hub in the United States.
+      </p>
+      <p class="text-[#f1f5f9] font-medium">
+        My life journey has taught me that the road to success passes through transparent dreams, thorough
+        planning, and proper actions.
+        <span class="text-[#94a3b8] font-normal">I want to finish this narrative with a precious quote from my favorite actor,
+        Denzel Washington:</span>
+      </p>
+      <blockquote class="border-l-2 border-[#f59e0b] pl-5 italic">
+        <p class="text-[#f1f5f9]">
+          "Dreams without goals are just dreams, and they ultimately fuel disappointment! On the road to achieving
+          your dreams, you must apply discipline, but more importantly, consistency. Because without commitment,
+          you will never start, but without consistency, you never finish!"
+        </p>
+        <footer class="mt-3 font-mono text-[#94a3b8] text-sm not-italic">— Denzel Washington</footer>
+      </blockquote>
+    </div>
+
+    <!-- PDF Download — only show if file exists -->
+    <div class="mt-14 pt-8 border-t border-[#1e3a5f] text-center">
+      <p class="font-mono text-[#94a3b8] text-xs tracking-widest uppercase mb-5">· · · Published Story · · ·</p>
+      {/* PDF download — place file at public/docs/my-story-green-river.pdf */}
+      <a
+        href="/docs/my-story-green-river.pdf"
+        download
+        class="inline-flex items-center gap-2 bg-[#f59e0b] hover:bg-[#d97706] text-[#0a0f1e] font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+        </svg>
+        Download — My Story Published by Green River College
+      </a>
+    </div>
+  </section>
+</BaseLayout>
