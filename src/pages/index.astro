@@ -1,8 +1,100 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
+
 <BaseLayout title="Home">
-  <main class="min-h-screen flex items-center justify-center">
-    <h1 class="font-mono text-sky-glow">Bryan Zandi Portfolio — coming soon</h1>
-  </main>
+  <!-- Hero Section -->
+  <section class="relative h-screen min-h-[600px] flex items-center">
+    <img
+      src="/images/hero/airplane-hero.jpg"
+      alt="Commercial airplane on runway at sunset"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-[#0a0f1e]/85 via-[#0a0f1e]/50 to-transparent"></div>
+    <div class="relative z-10 max-w-6xl mx-auto px-6">
+      <p class="font-mono text-[#38bdf8] text-sm tracking-widest uppercase mb-3">
+        Welcome to the Professional Portfolio of
+      </p>
+      <h1 class="text-6xl md:text-8xl font-bold text-white mb-6 tracking-tight">
+        Bryan Zandi
+      </h1>
+      <div class="flex flex-wrap gap-2 mb-8">
+        {['MBA in Aviation', 'Airline Transport Pilot (ATP)', 'Certified Flight Instructor (CFI)', 'Assistant Professor (AP)'].map(cred => (
+          <span class="font-mono text-xs bg-[#1e3a5f] text-[#38bdf8] border border-[#38bdf8]/30 px-3 py-1.5 rounded-full">
+            {cred}
+          </span>
+        ))}
+      </div>
+      <a href="/about" class="inline-flex items-center gap-2 bg-[#f59e0b] hover:bg-[#d97706] text-[#0a0f1e] font-semibold px-6 py-3 rounded-lg transition-colors text-sm">
+        Learn More
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="border-t border-[#1e3a5f]"></div>
+
+  <!-- Quotes + Portrait Section -->
+  <section class="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-16 items-center">
+    <div class="space-y-10">
+      <div>
+        <p class="font-mono text-[#f59e0b] text-xs tracking-widest uppercase mb-8">
+          · · · My Three Favorite Quotes · · ·
+        </p>
+
+        <blockquote class="border-l-2 border-[#38bdf8] pl-5 mb-8">
+          <p class="text-[#f1f5f9] leading-relaxed italic text-sm">
+            "Dreams without goals are just dreams, and they ultimately fuel disappointment! On the road to achieving your dreams, you must apply discipline, but more importantly, consistency. Because without commitment, you will never start, but without consistency, you never finish!"
+          </p>
+          <footer class="mt-3 font-mono text-[#94a3b8] text-xs">— Denzel Washington</footer>
+        </blockquote>
+
+        <blockquote class="border-l-2 border-[#38bdf8] pl-5 mb-8">
+          <p class="text-[#f1f5f9] leading-relaxed italic text-sm">
+            "If you were born without wings, do nothing to prevent them from growing."
+          </p>
+          <footer class="mt-3 font-mono text-[#94a3b8] text-xs">— Coco Chanel</footer>
+        </blockquote>
+
+        <blockquote class="border-l-2 border-[#38bdf8] pl-5">
+          <p class="text-[#f1f5f9] leading-relaxed italic text-sm">
+            "Once you have tasted flight, you will forever walk the earth with your eyes turned skyward, for there you have been, and there you will always long to return."
+          </p>
+          <footer class="mt-3 font-mono text-[#94a3b8] text-xs">— John H. Secondari</footer>
+        </blockquote>
+      </div>
+
+      <!-- Social Links -->
+      <div class="flex items-center gap-6 pt-4 border-t border-[#1e3a5f]">
+        <a href="https://www.linkedin.com/in/bryanzandi" target="_blank" rel="noopener noreferrer"
+           class="font-mono text-xs text-[#94a3b8] hover:text-[#38bdf8] transition-colors uppercase tracking-wider">
+          LinkedIn
+        </a>
+        <span class="text-[#1e3a5f]">·</span>
+        <a href="https://x.com/bryanzandi" target="_blank" rel="noopener noreferrer"
+           class="font-mono text-xs text-[#94a3b8] hover:text-[#38bdf8] transition-colors uppercase tracking-wider">
+          X / Twitter
+        </a>
+        <span class="text-[#1e3a5f]">·</span>
+        <a href="https://www.facebook.com/bryanzandi" target="_blank" rel="noopener noreferrer"
+           class="font-mono text-xs text-[#94a3b8] hover:text-[#38bdf8] transition-colors uppercase tracking-wider">
+          Facebook
+        </a>
+      </div>
+    </div>
+
+    <div class="flex justify-center">
+      <div class="relative">
+        <div class="absolute -inset-1 bg-gradient-to-br from-[#38bdf8]/20 to-[#f59e0b]/20 rounded-lg blur-sm"></div>
+        <img
+          src="/images/about/bryan-airport.jpg"
+          alt="Bryan Zandi in pilot uniform at the airport"
+          class="relative rounded-lg border border-[#1e3a5f] max-w-sm w-full shadow-2xl"
+        />
+      </div>
+    </div>
+  </section>
 </BaseLayout>
