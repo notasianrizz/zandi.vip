@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Articles">
+  <section class="relative h-64 flex items-end">
+    <img src="/images/hero/airplane-hero.jpg" alt="" aria-hidden="true"
+      class="absolute inset-0 w-full h-full object-cover object-bottom" />
+    <div class="absolute inset-0 bg-[#0a0f1e]/75"></div>
+    <div class="relative z-10 max-w-6xl mx-auto px-6 pb-8 w-full">
+      <p class="font-mono text-[#38bdf8] text-xs tracking-widest uppercase mb-2">Portfolio</p>
+      <h1 class="text-4xl md:text-5xl font-bold text-white">Articles</h1>
+    </div>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-6 py-24 text-center">
+    <p class="font-mono text-[#38bdf8] text-xs tracking-widest uppercase mb-4">· · · Academic Publications · · ·</p>
+    <h2 class="text-2xl font-bold text-[#f1f5f9] mb-4">Embry-Riddle Aeronautical University</h2>
+    <p class="text-[#94a3b8] mb-10 leading-relaxed max-w-lg mx-auto">
+      Bryan's academic articles and research publications are hosted on Academia.edu through
+      Embry-Riddle Aeronautical University.
+    </p>
+    <a
+      href="https://erau.academia.edu/BryanZandi"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-2 bg-[#38bdf8] hover:bg-[#0ea5e9] text-[#0a0f1e] font-semibold px-8 py-4 rounded-lg transition-colors"
+    >
+      View Articles on Academia.edu
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+      </svg>
+    </a>
+  </section>
+</BaseLayout>
