@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact Me">
+  <section class="relative h-64 flex items-end">
+    <img src="/images/hero/airplane-hero.jpg" alt="" aria-hidden="true"
+      class="absolute inset-0 w-full h-full object-cover object-bottom" />
+    <div class="absolute inset-0 bg-[#0a0f1e]/75"></div>
+    <div class="relative z-10 max-w-6xl mx-auto px-6 pb-8 w-full">
+      <p class="font-mono text-[#38bdf8] text-xs tracking-widest uppercase mb-2">Portfolio</p>
+      <h1 class="text-4xl md:text-5xl font-bold text-white">Contact Me</h1>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12">
+    <!-- Left: Contact Info -->
+    <div class="bg-[#111827] border border-[#1e3a5f] rounded-lg p-8 space-y-8 h-fit">
+      <div>
+        <p class="font-mono text-[#38bdf8] text-xs tracking-widest uppercase mb-5">Contact Information</p>
+        <div class="space-y-4">
+          <div class="flex items-start gap-4">
+            <span class="font-mono text-[#94a3b8] text-xs w-14 pt-0.5 shrink-0">Cell</span>
+            <a href="tel:+12066025067" class="text-[#f1f5f9] hover:text-[#38bdf8] transition-colors text-sm">
+              +1 (206) 602-5067
+            </a>
+          </div>
+          <div class="flex items-start gap-4">
+            <span class="font-mono text-[#94a3b8] text-xs w-14 pt-0.5 shrink-0">Email</span>
+            <div class="space-y-1">
+              <a href="mailto:Bryan@Zandi.vip" class="block text-[#f1f5f9] hover:text-[#38bdf8] transition-colors text-sm">
+                Bryan@Zandi.vip
+              </a>
+              <a href="mailto:Bryan.Zandi33@gmail.com" class="block text-[#f1f5f9] hover:text-[#38bdf8] transition-colors text-sm">
+                Bryan.Zandi33@gmail.com
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-[#1e3a5f] pt-6">
+        <p class="font-mono text-[#38bdf8] text-xs tracking-widest uppercase mb-4">Social Media</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="https://www.linkedin.com/in/bryanzandi" target="_blank" rel="noopener noreferrer"
+             class="bg-[#0a0f1e] border border-[#1e3a5f] hover:border-[#38bdf8] text-[#94a3b8] hover:text-[#38bdf8] px-4 py-2 rounded font-mono text-xs transition-all">
+            LinkedIn
+          </a>
+          <a href="https://x.com/bryanzandi" target="_blank" rel="noopener noreferrer"
+             class="bg-[#0a0f1e] border border-[#1e3a5f] hover:border-[#38bdf8] text-[#94a3b8] hover:text-[#38bdf8] px-4 py-2 rounded font-mono text-xs transition-all">
+            X / Twitter
+          </a>
+          <a href="https://www.facebook.com/bryanzandi" target="_blank" rel="noopener noreferrer"
+             class="bg-[#0a0f1e] border border-[#1e3a5f] hover:border-[#38bdf8] text-[#94a3b8] hover:text-[#38bdf8] px-4 py-2 rounded font-mono text-xs transition-all">
+            Facebook
+          </a>
+        </div>
+      </div>
+
+      <div class="border-t border-[#1e3a5f] pt-6">
+        <a
+          href="/docs/resume.pdf"
+          download
+          class="inline-flex items-center gap-2 w-full justify-center bg-[#f59e0b] hover:bg-[#d97706] text-[#0a0f1e] font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+          </svg>
+          Download Resume
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: Contact Form (Formspree) -->
+    <div>
+      <p class="font-mono text-[#38bdf8] text-xs tracking-widest uppercase mb-6">Send a Message</p>
+      <form
+        action="https://formspree.io/f/REPLACE_WITH_FORMSPREE_ID"
+        method="POST"
+        class="space-y-4"
+      >
+        <div>
+          <label for="name" class="block font-mono text-[#94a3b8] text-xs uppercase tracking-wider mb-1.5">Name *</label>
+          <input type="text" id="name" name="name" required
+            class="w-full bg-[#111827] border border-[#1e3a5f] focus:border-[#38bdf8] rounded-lg px-4 py-3 text-[#f1f5f9] outline-none transition-colors text-sm placeholder:text-[#94a3b8]/50"
+            placeholder="Your name" />
+        </div>
+        <div>
+          <label for="email" class="block font-mono text-[#94a3b8] text-xs uppercase tracking-wider mb-1.5">Email *</label>
+          <input type="email" id="email" name="email" required
+            class="w-full bg-[#111827] border border-[#1e3a5f] focus:border-[#38bdf8] rounded-lg px-4 py-3 text-[#f1f5f9] outline-none transition-colors text-sm placeholder:text-[#94a3b8]/50"
+            placeholder="your@email.com" />
+        </div>
+        <div>
+          <label for="phone" class="block font-mono text-[#94a3b8] text-xs uppercase tracking-wider mb-1.5">Phone (Optional)</label>
+          <input type="tel" id="phone" name="phone"
+            class="w-full bg-[#111827] border border-[#1e3a5f] focus:border-[#38bdf8] rounded-lg px-4 py-3 text-[#f1f5f9] outline-none transition-colors text-sm placeholder:text-[#94a3b8]/50"
+            placeholder="+1 (555) 000-0000" />
+        </div>
+        <div>
+          <label for="subject" class="block font-mono text-[#94a3b8] text-xs uppercase tracking-wider mb-1.5">Subject</label>
+          <input type="text" id="subject" name="subject"
+            class="w-full bg-[#111827] border border-[#1e3a5f] focus:border-[#38bdf8] rounded-lg px-4 py-3 text-[#f1f5f9] outline-none transition-colors text-sm placeholder:text-[#94a3b8]/50"
+            placeholder="What's this about?" />
+        </div>
+        <div>
+          <label for="message" class="block font-mono text-[#94a3b8] text-xs uppercase tracking-wider mb-1.5">Message *</label>
+          <textarea id="message" name="message" required rows="5"
+            class="w-full bg-[#111827] border border-[#1e3a5f] focus:border-[#38bdf8] rounded-lg px-4 py-3 text-[#f1f5f9] outline-none transition-colors resize-none text-sm placeholder:text-[#94a3b8]/50"
+            placeholder="Your message..."></textarea>
+        </div>
+        <button type="submit"
+          class="w-full bg-[#38bdf8] hover:bg-[#0ea5e9] text-[#0a0f1e] font-semibold py-3 rounded-lg transition-colors font-mono text-sm">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </section>
+</BaseLayout>
