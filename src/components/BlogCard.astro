@@ -1,4 +1,6 @@
 ---
+const BASE = import.meta.env.BASE_URL;
+
 interface Props {
   title: string;
   date: Date;
@@ -10,13 +12,14 @@ interface Props {
 }
 const { title, date, category, excerpt, coverImage, readTime, slug } = Astro.props;
 const formattedDate = date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+const coverSrc = `${BASE}${coverImage.replace(/^\//, '')}`;
 ---
 
 <article class="bg-[#111827] border border-[#1e3a5f] rounded-lg overflow-hidden hover:border-[#38bdf8]/50 transition-all duration-300 group">
-  <a href={`/blog/${slug}`} class="block">
+  <a href={`${BASE}blog/${slug}`} class="block">
     <div class="relative overflow-hidden h-48">
       <img
-        src={coverImage}
+        src={coverSrc}
         alt={title}
         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         loading="lazy"

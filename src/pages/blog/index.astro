@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import BlogCard from '../../components/BlogCard.astro';
 import { getCollection } from 'astro:content';
 
+const BASE = import.meta.env.BASE_URL;
 const allPosts = await getCollection('blog');
 const sortedPosts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
@@ -11,7 +12,7 @@ const categories = ['All Posts', 'Leadership', 'Egoism'];
 
 <BaseLayout title="Blogs">
   <section class="relative h-64 flex items-end">
-    <img src="/images/hero/airplane-hero.jpg" alt="" aria-hidden="true"
+    <img src={`${BASE}images/hero/airplane-hero.jpg`} alt="" aria-hidden="true"
       class="absolute inset-0 w-full h-full object-cover object-bottom" />
     <div class="absolute inset-0 bg-[#0a0f1e]/75"></div>
     <div class="relative z-10 max-w-6xl mx-auto px-6 pb-8 w-full">
@@ -21,11 +22,10 @@ const categories = ['All Posts', 'Leadership', 'Egoism'];
   </section>
 
   <section class="max-w-6xl mx-auto px-6 py-16">
-    <!-- Category labels (static — no JS filtering needed for static site) -->
     <div class="flex gap-2 mb-10 flex-wrap">
       {categories.map(cat => (
         <a
-          href={cat === 'All Posts' ? '/blog' : `/blog/category/${cat.toLowerCase()}`}
+          href={cat === 'All Posts' ? `${BASE}blog` : `${BASE}blog/category/${cat.toLowerCase()}`}
           class="px-4 py-2 rounded font-mono text-sm bg-[#111827] text-[#94a3b8] border border-[#1e3a5f] hover:border-[#38bdf8]/50 hover:text-[#f1f5f9] transition-all"
         >
           {cat}

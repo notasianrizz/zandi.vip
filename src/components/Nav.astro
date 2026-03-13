@@ -1,25 +1,28 @@
 ---
+const BASE = import.meta.env.BASE_URL;
+
 const navItems = [
-  { label: 'Home', href: '/' },
-  { label: 'About Me', href: '/about' },
-  { label: 'My Story', href: '/my-story' },
-  { label: 'Photos', href: '/photos' },
-  { label: 'Blogs', href: '/blog' },
+  { label: 'Home', href: BASE },
+  { label: 'About Me', href: `${BASE}about` },
+  { label: 'My Story', href: `${BASE}my-story` },
+  { label: 'Photos', href: `${BASE}photos` },
+  { label: 'Blogs', href: `${BASE}blog` },
   { label: 'Articles', href: 'https://erau.academia.edu/BryanZandi', external: true },
-  { label: 'Contact Me', href: '/contact' },
+  { label: 'Contact Me', href: `${BASE}contact` },
 ];
 
 const currentPath = Astro.url.pathname;
 
-function isActive(href: string): boolean {
-  if (href === '/') return currentPath === '/';
+function isActive(href: string, external?: boolean): boolean {
+  if (external) return false;
+  if (href === BASE) return currentPath === BASE || currentPath === BASE.slice(0, -1);
   return currentPath.startsWith(href);
 }
 ---
 
 <nav aria-label="Main navigation" class="sticky top-0 z-50 bg-[#0a0f1e]/90 backdrop-blur-md border-b border-[#1e3a5f]">
   <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-    <a href="/" class="font-mono text-sm text-[#94a3b8] tracking-widest uppercase hover:text-[#38bdf8] transition-colors">
+    <a href={BASE} class="font-mono text-sm text-[#94a3b8] tracking-widest uppercase hover:text-[#38bdf8] transition-colors">
       BZ · ATP
     </a>
     <ul class="flex flex-wrap gap-1 list-none m-0 p-0">
@@ -30,7 +33,7 @@ function isActive(href: string): boolean {
             target={item.external ? '_blank' : undefined}
             rel={item.external ? 'noopener noreferrer' : undefined}
             class={`px-3 py-1.5 rounded text-sm font-medium transition-all duration-200 no-underline
-              ${isActive(item.href)
+              ${isActive(item.href, item.external)
                 ? 'bg-[#f59e0b] text-[#0a0f1e] font-semibold'
                 : 'text-[#94a3b8] hover:text-[#f1f5f9] hover:bg-[#1e3a5f]'
               }`}

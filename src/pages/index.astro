@@ -1,12 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const BASE = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout title="Home">
   <!-- Hero Section -->
   <section class="relative h-screen min-h-[600px] flex items-center">
     <img
-      src="/images/hero/airplane-hero.jpg"
+      src={`${BASE}images/hero/airplane-hero.jpg`}
       alt="Commercial airplane on runway at sunset"
       class="absolute inset-0 w-full h-full object-cover"
     />
@@ -25,7 +26,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </span>
         ))}
       </div>
-      <a href="/about" class="inline-flex items-center gap-2 bg-[#f59e0b] hover:bg-[#d97706] text-[#0a0f1e] font-semibold px-6 py-3 rounded-lg transition-colors text-sm">
+      <a href={`${BASE}about`} class="inline-flex items-center gap-2 bg-[#f59e0b] hover:bg-[#d97706] text-[#0a0f1e] font-semibold px-6 py-3 rounded-lg transition-colors text-sm">
         Learn More
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -90,7 +91,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="relative">
         <div class="absolute -inset-1 bg-gradient-to-br from-[#38bdf8]/20 to-[#f59e0b]/20 rounded-lg blur-sm"></div>
         <img
-          src="/images/about/bryan-airport.jpg"
+          src={`${BASE}images/about/bryan-airport.jpg`}
           alt="Bryan Zandi in pilot uniform at the airport"
           class="relative rounded-lg border border-[#1e3a5f] max-w-sm w-full shadow-2xl"
         />
